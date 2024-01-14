@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Jonh",
+    "isAccepted": true,
+    "company": false,
+    "meal": "vegetarian"
+  },
+  {
+    "name": "Irina",
+    "isAccepted": true,
+    "company": true,
+    "meal": "all"
+  },
+  {
+    "name": "Oksana",
+    "isAccepted": false,
+    "company": "",
+    "meal": ""
+  },
+  {
+    "name": "Jakov",
+    "isAccepted": true,
+    "company": true,
+    "meal": "meat"
+  },
+  {
+    "id": "7SLmLrFgNohRsaCfVheQH",
+    "name": "Jack",
+    "isAccepted": true,
+    "company": false,
+    "meal": "fish"
+  }
+]
