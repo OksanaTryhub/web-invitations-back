@@ -1,4 +1,11 @@
-const app = require('./app');
-//7WK3GiDQPOA76xRT
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-app.listen(3000, () => console.log("Server NEW running at 3000"));
+const { DB_HOST } = process.env;
+
+const app = require("./app");
+
+mongoose
+  .connect(DB_HOST)
+  .then(() => app.listen(3000, () => console.log("Server running on port 3000")))
+  .catch((error) => console.log(error.message));

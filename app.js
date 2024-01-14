@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-// require("dotenv").config();
+require("dotenv").config();
 
 const peopleRouter = require('./routes/api/people-routes') 
 
