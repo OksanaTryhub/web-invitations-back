@@ -1,29 +1,19 @@
-const fs = require("fs/promises");
-const path = require('path');
+const { Schema, model } = require('mongoose');
 
-const guestsPath = path.join(__dirname, "guests.json");
+const guestSchema = new Schema({
+ name: {
+    type: String,
+    required: [true, "Name must be!"],
+  },
+  isAccepted: {
+    type: Boolean,
+    required: true,
+  },
+  company: Boolean,
+  meal: String,
+ 
+}, { versionKey: false, timestamps: true });
 
-const getAll = async () => {
-  const data = await fs.readFile(guestsPath);
-  return JSON.parse(data);
-}
+const Guest = model("guest", guestSchema);
 
-const addGuest= async ({ name, isAccepted, company, meal }) => {
-  const guests = await getAll();
-  const guest = {
-    name,
-    isAccepted,
-    company,
-    meal
-  };
-  guests.push(guest);
-
-  await fs.writeFile(guestsPath, JSON.stringify(guests, null, 2));
-  return guest;
-}
-
-module.exports = {
-  getAll,
-  addGuest
-}
-
+module.exports = Guest;
